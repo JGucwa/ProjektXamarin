@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjektXamarin.Views.CompanyEdit">
+    <ScrollView>
+        <StackLayout x:Name="CompanyContent">
+            <StackLayout Orientation="Horizontal">
+                <Image Source="LOGOPROJEKT.png" WidthRequest="300" HeightRequest="100"/>
+            </StackLayout>
+            <Button Text="Wyloguj się" WidthRequest="200" HeightRequest="40" BackgroundColor="Gray" TextColor="White" Margin="10" Clicked="Logout"/>
+            <StackLayout>
+                <BoxView Color="Black" HeightRequest="1" WidthRequest="800"/>
+                <StackLayout Margin="20" Orientation="Horizontal">
+                    <Entry Placeholder="Imie" x:Name="name" Text="{Binding Name}" FontSize="18" WidthRequest="300" VerticalTextAlignment="Center"/>
+                </StackLayout>
+                <StackLayout Margin="20" Orientation="Horizontal">
+                    <Entry Placeholder="Nazwisko" x:Name="localization" Text="{Binding Localization}" FontSize="18" WidthRequest="300" VerticalTextAlignment="Center"/>
+                </StackLayout>
+                <StackLayout Margin="20" Orientation="Horizontal">
+                    <Entry Placeholder="Nazwisko" x:Name="description" Text="{Binding Description}" FontSize="18" WidthRequest="300" VerticalTextAlignment="Center"/>
+                </StackLayout>
+                <Button Text="Edytuj dane" WidthRequest="300" HeightRequest="50" BackgroundColor="DodgerBlue" Clicked="Change"/>
+                <ListView x:Name="Offertspage" RowHeight="200">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame Padding="10" BackgroundColor="White" Margin="10" CornerRadius="10">
+                                    <StackLayout Orientation="Horizontal">
+                                        <StackLayout>
+                                            <Label Text="{Binding Title}" FontSize="Large" FontAttributes="Bold" TextColor="Black"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Text="Podglad" Clicked="ShowOffer" CommandParameter="{Binding .}"/>
+                                    <MenuItem Text="Usun" Clicked="DeleteOffer" CommandParameter="{Binding .}"/>
+                                </ViewCell.ContextActions>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

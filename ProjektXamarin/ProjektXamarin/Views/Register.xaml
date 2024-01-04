@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjektXamarin.Views.Register">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Margin" Value="0,0,0,5"/>
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="Margin" Value="0,0,0,10"/>
+            <Setter Property="WidthRequest" Value="200"/>
+            <Setter Property="HeightRequest" Value="40"/>
+            <Setter Property="PlaceholderColor" Value="#999999"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="0,0,0,5"/>
+            <Setter Property="WidthRequest" Value="90"/>
+            <Setter Property="HeightRequest" Value="35"/>
+            <Setter Property="BackgroundColor" Value="#007ACC"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="BorderWidth" Value="1"/>
+            <Setter Property="BorderColor" Value="#005F91"/>
+            <Style.Triggers>
+                <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                    <Setter Property="BackgroundColor" Value="#005F91"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="StackLayout">
+            <Setter Property="Margin" Value="20"/>
+            <Setter Property="Padding" Value="10"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout>
+            <Frame Margin="5,0,5,0">
+                <StackLayout>
+                    <Label Text="Email:"/>
+                    <Entry x:Name="txtUserUsername"/>
+
+                    <Label Text="Password:"/>
+                    <Entry x:Name="pwdUserPassword" IsPassword="True"/>
+
+                    <Button Text="Login" Clicked="UserLogin"/>
+                    <Button Text="Register" Clicked="UserRegister"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame Margin="5,5,5,0">
+                <StackLayout>
+                    <Label Text="Company Name:"/>
+                    <Entry x:Name="txtCompanyUsername"/>
+
+                    <Label Text="Password:"/>
+                    <Entry x:Name="pwdCompanyPassword" IsPassword="True"/>
+
+                    <Button Text="Login" Clicked="CompanyLogin"/>
+                    <Button Text="Register" Clicked="CompanyRegister"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjektXamarin.Views.RegisterPage">
+    <ContentPage.Content>
+        <Frame Margin="10,100,10,100">
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+                <Image Source="LOGOPROJEKT.png" WidthRequest="400"/>
+                <Label Text="Dołącz do nas" FontSize="28"/>
+                <Label x:Name="name" Text="Nazwa Firmy:"/>
+                <Entry x:Name="txtUsername"/>
+                <Label Text="Hasło:"/>
+                <Entry x:Name="pwdPassword" IsPassword="True"/>
+                <Label Text="Powtorz Hasło:"/>
+                <Entry x:Name="pwdPassword2" IsPassword="True"/>
+                <Button Text="Register" Clicked="Register"/>
+            </StackLayout>
+        </Frame>
+        
+    </ContentPage.Content>
+</ContentPage>

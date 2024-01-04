@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjektXamarin.Views.FlyoutPage1Detail"
+             Title="Pracujemy">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout>
+                    <Image Source="LOGOPROJEKT.png" WidthRequest="400"/>
+                    <Label Text="Pracujemy" FontSize="Large" HorizontalOptions="CenterAndExpand" Margin="0,20,0,20"/>
+
+                    <Frame BackgroundColor="White" HeightRequest="300" Padding="10,10,10,10" CornerRadius="15">
+                        <StackLayout>
+                            <Frame BackgroundColor="White" CornerRadius="10" Padding="5" Margin="10">
+                                <Entry Placeholder="Kluczowe słowo" Text="" x:Name="Keyword" HorizontalOptions="FillAndExpand" FontSize="16"/>
+                            </Frame>
+                            <Frame BackgroundColor="White" CornerRadius="10" Padding="5" Margin="10">
+                                <Picker x:Name="Category" Title="Select Category" SelectedItem="Wybierz kategorie" FontSize="18" WidthRequest="200">
+                                    <Picker.Items>
+                                        <x:String>Wybierz kategorie</x:String>
+                                        <x:String>IT</x:String>
+                                        <x:String>Medycyna</x:String>
+                                        <x:String>Finanse</x:String>
+                                        <x:String>Sprzedaż</x:String>
+                                        <x:String>Edukacja</x:String>
+                                        <x:String>Inżynieria</x:String>
+                                        <x:String>Sztuka</x:String>
+                                        <x:String>Prawo</x:String>
+                                        <x:String>Administracja</x:String>
+                                        <x:String>Inne</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </Frame>
+                            <Frame BackgroundColor="White" CornerRadius="10" Padding="5" Margin="10">
+                                <Entry Placeholder="Lokalizacja" x:Name="Localization" HorizontalOptions="FillAndExpand" FontSize="16"/>
+                            </Frame>
+                            <Frame BackgroundColor="White" CornerRadius="10" Padding="5" Margin="10">
+                                <Entry Placeholder="+km" x:Name="Locationplus" HorizontalOptions="FillAndExpand" FontSize="16"/>
+                            </Frame>
+                        </StackLayout>
+                    </Frame>
+
+                    <Button Text="Szukaj" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0" Clicked="Search"/>
+
+                    <ListView x:Name="Offertspage" RowHeight="200" ItemTapped="OpenDetails">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Frame Padding="10" BackgroundColor="White" Margin="10" CornerRadius="10">
+                                        <StackLayout >
+                                            <Label Text="{Binding Title}" FontSize="Large" FontAttributes="Bold" TextColor="Black"/>
+                                            <Label Text="{Binding Salary}" FontSize="Medium" TextColor="Black"/>
+                                            <Label Text="{Binding Description}" FontSize="Small" TextColor="Black"/>
+                                        </StackLayout>
+                                    </Frame>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

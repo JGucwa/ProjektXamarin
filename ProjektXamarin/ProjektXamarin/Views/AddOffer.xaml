@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjektXamarin.Views.AddOffer">
+    <ScrollView>
+        <StackLayout>
+            <StackLayout>
+                <BoxView Color="Black" HeightRequest="1"/>
+                <Image Source="LOGOPROJEKT.png"/>
+                <Button Text="Dodaj oferte" WidthRequest="300" HeightRequest="50" BackgroundColor="DodgerBlue" Margin="10" Clicked="SubmitOffer"/>
+                <StackLayout Margin="20" Orientation="Horizontal">
+                    <Label Text="Tytul:" FontSize="18" WidthRequest="150"/>
+                    <Entry x:Name="TitleTextBox" FontSize="18" VerticalOptions="Center" WidthRequest="200"/>
+                </StackLayout>
+                <StackLayout Margin="20" Orientation="Horizontal">
+                    <Label Text="Wygasa:" FontSize="18" WidthRequest="150"/>
+                    <DatePicker x:Name="expired" WidthRequest="200" FontSize="18"/>
+                </StackLayout>
+                <BoxView Color="Black" HeightRequest="1"/>
+
+                <StackLayout Margin="20" Orientation="Horizontal">
+                    <Entry Text="0" x:Name="SalaryFrom" FontSize="18" WidthRequest="80" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                    <Label Text=" do " FontSize="18"/>
+                    <Entry Text="0" x:Name="SalaryTo" FontSize="18" WidthRequest="80" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                    <Label Text=" PLN na miesiac " FontSize="18"/>
+                </StackLayout>
+                <BoxView Color="Black" HeightRequest="1"/>
+
+                <StackLayout Margin="20" Orientation="Horizontal">
+                    <Label Text="Typ kontraktu:" FontSize="18" WidthRequest="150"/>
+                    <Picker x:Name="TypeofContract" Title="Wybierz typ" FontSize="18" WidthRequest="200">
+                        <Picker.Items>
+                            <x:String>Umowa o pracę</x:String>
+                            <x:String>Umowa zlecenie</x:String>
+                            <x:String>Umowa o dzieło</x:String>
+                            <x:String>Praca sezonowa</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+                <StackLayout Margin="20" Orientation="Horizontal">
+                    <Label Text="Typ pracy:" FontSize="18" WidthRequest="150"/>
+                    <Picker x:Name="TypeofJob" Title="Wybierz tryb" FontSize="18" WidthRequest="200">
+                        <Picker.Items>
+                            <x:String>Praca mobilna</x:String>
+                            <x:String>Praca zdalna</x:String>
+                            <x:String>Praca hybrydowa</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+                <BoxView Color="Black" HeightRequest="1"/>
+
+                <StackLayout Margin="20" Orientation="Horizontal">
+                    <Label Text="Zatrudnienie:" FontSize="18" WidthRequest="150"/>
+                    <Picker x:Name="Employment" Title="Wybierz zatrudnienie" FontSize="18" WidthRequest="200">
+                        <Picker.Items>
+                            <x:String>Pełny etat</x:String>
+                            <x:String>Pół etatu</x:String>
+                            <x:String>Praca dorywcza</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+                <StackLayout Margin="20" Orientation="Horizontal">
+                    <Label Text="Kategoria:" FontSize="18" WidthRequest="150"/>
+                    <Picker x:Name="Category" Title="Wybierz kategorie" FontSize="18" WidthRequest="200">
+                        <Picker.Items>
+                            <x:String>IT</x:String>
+                            <x:String>Medycyna</x:String>
+                            <x:String>Finanse</x:String>
+                            <x:String>Sprzedaż</x:String>
+                            <x:String>Edukacja</x:String>
+                            <x:String>Inżynieria</x:String>
+                            <x:String>Sztuka</x:String>
+                            <x:String>Prawo</x:String>
+                            <x:String>Administracja</x:String>
+                            <x:String>Inne</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+                <BoxView Color="Black" HeightRequest="1"/>
+
+                <StackLayout Margin="20" Orientation="Horizontal">
+                    <Label Text="Nazwa stanowiska:" FontSize="18" WidthRequest="150"/>
+                    <Entry x:Name="Position_name" FontSize="18" WidthRequest="200" VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Margin="20" Orientation="Horizontal">
+                    <Label Text="Poziom stanowiska:" FontSize="18" WidthRequest="150"/>
+                    <Entry x:Name="Position_level" WidthRequest="200" FontSize="18" VerticalOptions="Center"/>
+                </StackLayout>
+                <BoxView Color="Black" HeightRequest="1"/>
+
+                <StackLayout Margin="20">
+                    <Label Text="Opis" FontSize="18" WidthRequest="150"/>
+                    <Entry x:Name="description" FontSize="18" WidthRequest="700" VerticalOptions="FillAndExpand" Placeholder="Opis oferty"/>
+                </StackLayout>
+                <BoxView Color="Black" HeightRequest="1"/>
+
+                <StackLayout Margin="20">
+                    <Label Text="Wymagania" FontSize="18" WidthRequest="150"/>
+                    <StackLayout x:Name="requirments">
+                        <Button x:Name="addbtn0" Text="+" FontSize="20" WidthRequest="40" HeightRequest="40" Clicked="RequirmentAdd" HorizontalOptions="Start"/>
+                        <Entry x:Name="req0" FontSize="18" WidthRequest="300" VerticalOptions="FillAndExpand" Placeholder="Wymaganie"/>
+                    </StackLayout>
+                </StackLayout>
+                <BoxView Color="Black" HeightRequest="1"/>
+
+                <StackLayout Margin="20">
+                    <Label Text="Obowiązki" FontSize="18" WidthRequest="150"/>
+                    <StackLayout x:Name="duties">
+                        <Button x:Name="addbtn1" Text="+" FontSize="20" WidthRequest="40" HeightRequest="40" Clicked="DutiesAdd" HorizontalOptions="Start"/>
+                        <Entry x:Name="dut0" FontSize="18" WidthRequest="300" VerticalOptions="FillAndExpand" Placeholder="Obowiązek"/>
+                    </StackLayout>
+                </StackLayout>
+                <BoxView Color="Black" HeightRequest="1"/>
+
+                <StackLayout Margin="20">
+                    <Label Text="Benefity" FontSize="18" WidthRequest="150"/>
+                    <StackLayout x:Name="benefits">
+                        <Button x:Name="addbtn2" Text="+" FontSize="20" WidthRequest="40" HeightRequest="40" Clicked="BenefitsAdd" HorizontalOptions="Start"/>
+                        <Entry x:Name="ben0" FontSize="18" WidthRequest="300" HeightRequest="100" Placeholder="Benefit"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+        
+    </ScrollView>
+</ContentPage>
