@@ -36,17 +36,7 @@ namespace ProjektXamarin.Views
             {
                 if (new Database().GetOffers()[i].Title.ToLower().Contains(text.ToLower()))
                 {
-                    if(Category.SelectedIndex > 0)
-                    {
-                        if(tmp[i].Category == Category.SelectedIndex)
-                        {
-                            tmp.Add(new Database().GetOffers()[i]);
-                        }
-                    }
-                    else
-                    {
-                        tmp.Add(new Database().GetOffers()[i]);
-                    }
+                    tmp.Add(new Database().GetOffers()[i]);
                 }
             }        
             Offertspage.ItemsSource = tmp;
